@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=<form id=" new-form" action="/mobiles" method="POST">
+  <link rel='stylesheet' href='/stylesheets/styleForNewDevice.css' />
+</head>
+
+<body>
+  <% if (user) {%>
+    <ul>
+      <li><a href="/mobiles" style="text-decoration: none; color: white;">MOBILE GALLERY</a></li>
+      <li><a href="/mobiles/new" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
+      <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
+
+    </ul>
+    <% } else {%>
+      <ul>
+        <li><a href="/mobiles">MOBILE GALLERY</a></li>
+        <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          </a></li>
+        <li>Contact us</li>
+      </ul>
+      <%}%>
+        <br></br>
+
+        <center>
+          <br>
+          <div>
+
+
+            <% if (user) { %>
+              <td><img src='<%= user.avatar%>'
+                  style="border:4px solid #1b6b6f; width: 80px; height: 80px; border-radius: 40px;"></td>
+              <h3 style="text-decoration: none; color: white;">
+                <%= user.name %>
+              </h3>
+
+
+
+              <% } %>
+
+
+          </div></br>
+
+
+
+        </center>
+
+        <div class="row">
+          <div class="col-md-12">
+            <form action="/mobiles" method="POST">
+              <h1> Add Mobile Info </h1>
+
+              <fieldset>
+
+                <label for="name">Device Name:</label>
+                <input type="text" id="name" name="deviceName">
+
+                <label for="email">Price:</label>
+                <input type="text" id="name" name="devicePrice">
+
+                <label for="deviceImage">Image URL:</label>
+                <input type="text" id="name" name="deviceImage">
+
+
+                <label for="deviceImage">Ram:</label>
+                <input type="text" id="name" name="deviceRam">
+
+
+                <label for="deviceImage">Rom:</label>
+                <input type="text" id="name" name="deviceRom">
+
+
+                <label> Hide Email:</label>
+                <select name="hideEmail">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+
+                </select>
+
+              </fieldset>
+
+              <button type="submit" value="Post Device"> Post Device </button>
+
+
+            </form>
+          </div>
+        </div>
+
+        </form>
+
+        <title>New Post</title>
+</body>
+
+</html>

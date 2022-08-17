@@ -18,7 +18,6 @@ const mobileSchema = new mongoose.Schema({
   deviceOwner: String,
   deviceOwnerAvatar: String,
   deviceOwnerEmail: String,
-  hideEmail: String,
   devicePrice: String,
   deviceImage: String,
   deviceRam: String,
@@ -29,7 +28,7 @@ const mobileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  reviews: [feedbackSchema],
+  feedback: [feedbackSchema],
 });
 
 
