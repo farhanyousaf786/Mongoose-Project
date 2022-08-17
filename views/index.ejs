@@ -5,36 +5,45 @@
   <title>
     <%= title %>
   </title>
+  <link rel='stylesheet' href='/stylesheets/styleMainIndex.css' />
 </head>
 
 <body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="content">
+    <img style="width: 200px; height: 200px;" src="/images/logo.png">
 
-  <h1>Welcome To Mobile Gallery</h1>
-
-
-  <% if (user) { %>
-    
-      <th> <button><a href="/mobiles" style="text-decoration:none">All Posts</a></button>
-      </th>
-    <% } else { %>
-
-      <table style="width:100%">
-
-        <tr>
-          <button><a href="/auth/google" class="login" style="text-decoration:none">LOG IN WITH GOOGLE&nbsp;</a></button>
-          </td>
-
-        </tr>
-        <tr>
-          <th> <button><a href="/mobiles" style="text-decoration:none">Recent Posts</a></button>
-          </th>
-
-        </tr>
-      </table>
+    <h1>Welcome To Mobile Gallery</h1>
 
 
-      <% } %>
+    <% if (user) { %>
+      
+        <th> <button><a href="/mobiles" style="text-decoration:none">All Posts</a></button>
+        </th>
+      <% } else { %>
 
+        <table style="width:100%">
+
+          <tr>
+            <button><a href="/auth/google" class="login" style="text-decoration:none">LOG IN WITH GOOGLE&nbsp;<img
+                  src="https://i.imgur.com/FHjYyi0.png"></a></button>
+            </td>
+
+          </tr>
+          <tr>
+            <th> <button><a href="/mobiles" style="text-decoration:none">Recent Posts</a></button>
+            </th>
+
+          </tr>
+        </table>
+
+
+        <% } %>
+
+
+  </div>
 </body>
 
 </html>

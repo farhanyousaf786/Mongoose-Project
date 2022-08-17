@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const feedBackSchema = new mongoose.Schema(
+const feedbackSchema = new mongoose.Schema(
   {
     content: String,
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, 
@@ -12,6 +12,7 @@ const feedBackSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
 
 const mobileSchema = new mongoose.Schema({
   deviceOwner: String,
@@ -28,7 +29,8 @@ const mobileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  reviews: [feedBackSchema],
+  reviews: [feedbackSchema],
 });
+
 
 module.exports = mongoose.model("Mobile", mobileSchema);
