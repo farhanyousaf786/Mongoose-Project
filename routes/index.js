@@ -2,6 +2,8 @@ const router = require('express').Router();
 const passport = require('passport');
 const { resource } = require('../server');
 
+
+
 // The root route renders our only view
 router.get('/', function(req, res) {
   //UPDATE THIS
@@ -18,11 +20,7 @@ router.get('/', function(req, res) {
 
 });
 
-router.get('/', function(req, res, ) {
-  // res.redirect('/movies');
-  res.render('index', { title: 'Mobile Gallery' });
 
-});
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -34,8 +32,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect : '/' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect : '/mobiles', // UPDATE THIS, where do you want the client to go after you login 
+    failureRedirect : '/mobiles' //  UPDATE THIS, where do you want the client to go if login fails
   }
 ));
 
