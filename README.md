@@ -8,8 +8,8 @@ mobile devices and give them feedback.
 
 
 
-## The Game
-[Play Connect Four](https://farhanyousaf786.github.io/Connect-Four/)
+## Launch Here
+[Launch Mobile Gallery](https://mobile-gallery-786.herokuapp.com/mobiles)
 
 ## Technologies Used
 * HTML
