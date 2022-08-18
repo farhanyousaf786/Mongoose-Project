@@ -8,6 +8,8 @@
   <link rel='stylesheet' href='/stylesheets/styleForMobileDetails.css' />
 
   <title>Details</title>
+
+
 </head>
 
 <body>
@@ -35,6 +37,7 @@
       </ul>
 
       <%}%>
+
 
 
 
@@ -85,6 +88,11 @@
                 <button type="submit">Delete</button>
               </form>
               <% } %>
+                <% if (user?._id.equals(mobiles.userId)) { %>
+                  <button>
+                    <a style="text-decoration: none; color: white; padding: auto;" href="#footer" >Click to edit</a>
+                  </button>
+                  <% } %>
 
 
 
@@ -119,7 +127,7 @@
 
               <br><textarea name="content" style="width: 50%; height: 100px"></textarea></br>
 
-              <input type="submit" value="Add Review"></input>
+              <input type="submit" value="Feedback"></input>
 
             </form>
             <% } %>
@@ -170,54 +178,48 @@
               </br>
 
               <% } else { %>
-               <center><h3>There is no review in this post</h3></center> 
+                <center>
+                  <h3>There is no feedback in this post</h3>
+                </center>
                 <% } %>
 
 
 
-
-                <br></br>
+                  <br></br>
                   <% if (user?._id.equals(mobiles.userId)) { %>
                     <div style="margin-top: 30%;" class="row">
                       <div class="col-md-12">
-                        <form  action="/mobiles/<%= mobiles._id %>?_method=PUT" method="POST">
+                        <form action="/mobiles/<%= mobiles._id %>?_method=PUT" method="POST">
                           <h1> Add Mobile Info </h1>
-            
+
                           <fieldset>
-            
+
                             <label for="name">Device Name:</label>
                             <input type="text" value="<%= mobiles.deviceName %>" id="name" name="deviceName">
-            
+
                             <label for="email">Price:</label>
                             <input type="text" id="name" value="<%= mobiles.devicePrice%>" name="devicePrice">
-                     
-            
+
+
                             <label for="deviceImage">Ram:</label>
                             <input type="text" value="<%= mobiles.deviceRam %>" id="name" name="deviceRam">
-            
-            
+
+
                             <label for="deviceImage">Rom:</label>
                             <input type="text" value="<%= mobiles.deviceRom %>" id="name" name="deviceRom">
-            
+
                           </fieldset>
-            
+
                           <button type="submit">Update</button>
 
-            
-            
+
+
                         </form>
                       </div>
                     </div>
 
                     <% } %>
-
-
-
-                  
-
-
-
-
+                      <footer id="footer"></footer>
 
 
 </body>
