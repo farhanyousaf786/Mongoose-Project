@@ -12,14 +12,13 @@ module.exports = {
 
 
 
-
 function edit(req, res) {
   console.log(req.body, " <<<<< ==== body");
 
   Mobile.findByIdAndUpdate(req.params.id, req.body, function (err, mobDoc) {
 
     mobDoc.save(function (err) {
-      
+
       res.render("mobiles/deviceDetails", {
         title: "Mobile Detail",
         mobiles: mobDoc,
@@ -106,13 +105,20 @@ async function deleteDevice(req, res) {
   try {
     const mobDoc = await Mobile.findById(req.params.id);
 
-    if (!mobDoc) return res.redirect('/');
 
-    mobDoc.remove(req.params.id);
+    if (mobDoc) {
 
-    await mobDoc.save();
+      mobDoc.remove(req.params.id);
 
-    res.redirect('/mobiles');
+      await mobDoc.save();
+
+      res.redirect('/mobiles');
+
+    } else {
+
+      res.redirect('/mobiles');
+    }
+
 
   } catch (err) {
     res.send(err);
