@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const feedbackSchema = new mongoose.Schema(
   {
     content: String,
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, 
     userName: String,
-    userAvatar: String
+    userAvatar: String,
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+
   },
   {
     timestamps: true,
@@ -22,12 +23,8 @@ const mobileSchema = new mongoose.Schema({
   deviceImage: String,
   deviceRam: String,
   deviceRom: String,
-  deviceDisplay: String,
-  deviceModel: String,
-  deviceName: {
-    type: String,
-    required: true,
-  },
+  deviceName: String,
+  userId: String,
   feedback: [feedbackSchema],
 });
 

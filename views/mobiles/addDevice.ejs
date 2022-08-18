@@ -12,7 +12,6 @@
   <% if (user) {%>
     <ul>
       <li><a href="/mobiles" style="text-decoration: none; color: white;">MOBILE GALLERY</a></li>
-      <li><a href="/mobiles/new" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
       <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
 
     </ul>
@@ -37,7 +36,6 @@
               <h3 style="text-decoration: none; color: white;">
                 <%= user.name %>
               </h3>
-
 
 
               <% } %>
@@ -72,14 +70,6 @@
 
                 <label for="deviceImage">Rom:</label>
                 <input type="text" id="name" name="deviceRom">
-
-
-                <label> Hide Email:</label>
-                <select name="hideEmail">
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-
-                </select>
 
               </fieldset>
 

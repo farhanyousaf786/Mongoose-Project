@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/styleForMobileDetails.css' />
+
+  <title>Details</title>
+</head>
+
+<body>
+
+
+  <% if(user) { %>
+
+    <ul>
+
+      <li> <a href="/mobiles" style="text-decoration: none; color: white;">MOBILE GALLERY</a>
+      </li>
+
+      <li><a href="/mobiles/addDevice" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
+
+      <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
+
+    </ul>
+
+
+    <% }else{%>
+
+      <ul>
+        <li> <a style="text-decoration: none; color: white;" href="/mobiles">MOBILE GALLERY</a>
+        </li>
+      </ul>
+
+      <%}%>
+        <section id="show-page">
+
+          <br></br>
+          <div class="card">
+
+            <center> <img src='<%= mobiles.deviceImage%>.jpg'
+                style="border:3px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px; margin: auto; border-radius: 40px;"> </center>
+
+
+            <table style="width:60%; margin: auto;">
+              <tr>
+                <th>Properties</th>
+                <th>Detail</th>
+              </tr>
+              <tr>
+                <td>Device Name</td>
+                <td>
+                  <%= mobiles.deviceName %>
+                </td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>
+                  <%= mobiles.devicePrice %>
+                </td>
+              </tr>
+              <tr>
+                <td>Ram</td>
+                <td>
+                  <%= mobiles.deviceRam %>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Rom</td>
+                <td>
+                  <%= mobiles.deviceRom %>
+                </td>
+              </tr>
+
+            </table>
+            <% if (user?._id.equals(mobiles.userId)) { %>
+              <form action="/mobiles/<%= mobiles._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+              <% } %>
+          </div>
+
+        </section>
+
+        <br>
+        <br>
+
+        <table style="width:22%; margin: auto;  border: 0px;">
+
+          <td style="border: 0px;">
+            <h2 style="font-size: 14px; ">Post By:</h2>
+          </td>
+
+          <td style="border: 0px;""><img src='<%= mobiles.deviceOwnerAvatar%>'
+        style=" border:4px #1b6b6f; height: 60px; border-radius: 40px; margin: auto;"></td>
+          <td style="text-align:left; font-size: 12px; border: 0px;">
+            <%= mobiles.deviceOwner %>
+          </td>
+        </table>
+
+        <center>
+          <% if (user) { %>
+            <br><br>
+            <h2>Add FeedBack</h2>
+
+            <form method="POST" action="/mobiles/<%= mobiles._id %>/feedback">
+
+             <br><textarea name="content" style="width: 50%; height: 100px" ></textarea></br> 
+
+              <input type="submit" value="Add Review"></input>
+
+            </form>
+            <% } %>
+  
+        </center>
+
+           <% if (mobiles.feedback.length) { %>
+              <br>
+             
+                <% mobiles.feedback.forEach(function(m) { %>
+
+                  <div style="padding: 1%;">
+                  
+                  
+                      
+                    <div class="feedbackCard"  >
+
+                      <table style="width:25%; margin: auto;  border: 0px; align-content: left;">
+  
+                        <td style="border: 0px;""> <img src='<%= m.userAvatar%>'
+                          style="border:4px  #1b6b6f; width: 60px; height: 60px; border-radius: 30px;"></td>
+                    
+                        <td style="font-size: 12px; border: 0px; ">
+                          <%= m.userName %>
+                        </td>
+                        
+                      </table>
+                    <center><td style="text-align:left; font-size: 12px; border: 0px;">
+                      <%= m.content %>
+                    </td>
+  
+                        <% if (user?._id.equals(m.user)) { %>
+                          <form action="/feedback/<%= m._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                          </form>
+                          <% } %>
+                      </td></center>  
+                      </table>
+                     
+                    </div>
+                  
+                  </div>
+
+              
+                  <% }); %>
+              </br>
+
+              <% } else { %>
+                <h5>No Review</h5>
+                <% } %>
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+</body>
+
+</html>

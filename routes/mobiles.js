@@ -6,10 +6,15 @@ const isLoggedIn = require('../config/auth')
 
 const mobileController = require('../controllers/mobiles');
 
+
 router.get('/addDevice', isLoggedIn, mobileController.addDevice);
 
 router.post('/', isLoggedIn, mobileController.create);
 
 router.get('/', mobileController.index);
+
+router.get('/:id', mobileController.mobileDetials);
+
+router.delete('/:id', isLoggedIn, mobileController.deleteDevice);
 
 module.exports = router;
