@@ -101,11 +101,19 @@ function create(req, res) {
 async function deleteDevice(req, res) {
 
   console.log("deleteDevice", req.params.id);
-  const mobDoc = await Mobile.findById(req.params.id);
+  try {
+    const mobDoc = await Mobile.findById(req.params.id);
 
-  mobDoc.remove(req.params.id);
+      mobDoc.remove(req.params.id);
 
-  await mobDoc.save();
+      await mobDoc.save();
 
-  res.redirect('/mobiles');
+      res.redirect('/mobiles');
+
+     
+
+  } catch (err) {
+    res.send(err);
+
+  }
 }
