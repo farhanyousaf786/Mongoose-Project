@@ -10,52 +10,64 @@
 </head>
 
 <body>
-  <% if (user) {%>
-    <ul>
-      <li><a href="/mobiles" style="text-decoration: none; color: white;">MOBILE GALLERY</a></li>
-      <li><a href="/mobiles/addDevice" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
-      <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
-      
-    </ul>
-    <% } else {%>
+
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <div class="content">
+
+    <% if (user) {%>
       <ul>
-        <li><a href="/mobiles" style="text-decoration: none; color: white;">MOBILE GALLERY</a></li>
-        <li><a href="/auth/google" class="login" style="text-decoration: none; color: white;">LOG IN WITH;<img
-              src="https://i.imgur.com/FHjYyi0.png"></a>
-          </a></li>
+        <li><a href="/mobiles/addDevice" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
+        <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
+
       </ul>
-      <%}%>
-        <br></br>
-        <br>
-        <div class="grid">
-          <% mobiles.forEach(function(m) { %>
-            <div class="card">
-              <img src='<%= m.deviceImage%>.jpg'
-                style="border:4px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px;">
-              <table style="width:22%">
-                <td style="font-size: 14px;">Onwer: </td>
-                <td style="text-align:left; font-size: 12px;">
-                  <%= m.deviceOwner %>
-                </td>
-                <tr>
-                  <td style="font-size: 14px;">Device: </td>
+      <% } else {%>
+        <ul>
+          <li><a href="/auth/google" class="login" style="text-decoration: none; color: white;">LOG IN WITH </a>
+          </li>
+        </ul>
+        <%}%>
+          <br></br>
+          <br>
+          <div class="grid">
+            <% mobiles.forEach(function(m) { %>
+              <div class="card">
+                <img src='<%= m.deviceImage%>.jpg'
+                  style="border:4px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px;">
+                <table style="width:22%">
+                  <td style="font-size: 14px;">Onwer: </td>
                   <td style="text-align:left; font-size: 12px;">
-                    <%= m.deviceName %>
+                    <%= m.deviceOwner %>
                   </td>
-                </tr>
-                <td style="font-size: 14px;">Price: </td>
-                <td style="text-align:left; font-size: 12px;">
-                  <%= m.devicePrice %>
-                </td>
-              </table>
-              <button style="border-radius: 8px;">
-                <center><a href="/mobiles/<%= m._id %>" style="text-decoration:none">See More...</a></center>
-              </button>
-              
-            </div>
-            <% }); %>
-        </div></br>
-        </center>
+                  <tr>
+                    <td style="font-size: 14px;">Device: </td>
+                    <td style="text-align:left; font-size: 12px;">
+                      <%= m.deviceName %>
+                    </td>
+                  </tr>
+                  <td style="font-size: 14px;">Price: </td>
+                  <td style="text-align:left; font-size: 12px;">
+                    <%= m.devicePrice %>
+                  </td>
+                </table>
+                <button style="border-radius: 8px;">
+                  <center><a href="/mobiles/<%= m._id %>" style="text-decoration:none">See More...</a></center>
+                </button>
+
+              </div>
+              <% }); %>
+          </div></br>
+          </center>
+
+
+  </div>
+
+
+
+
+
 </body>
 
 </html>
