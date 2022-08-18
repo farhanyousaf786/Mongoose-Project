@@ -35,13 +35,17 @@
       </ul>
 
       <%}%>
+
+
+
         <section id="show-page">
 
           <br></br>
           <div class="card">
 
             <center> <img src='<%= mobiles.deviceImage%>.jpg'
-                style="border:3px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px; margin: auto; border-radius: 40px;"> </center>
+                style="border:3px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px; margin: auto; border-radius: 40px;">
+            </center>
 
 
             <table style="width:60%; margin: auto;">
@@ -81,6 +85,11 @@
                 <button type="submit">Delete</button>
               </form>
               <% } %>
+
+
+
+
+
           </div>
 
         </section>
@@ -108,68 +117,103 @@
 
             <form method="POST" action="/mobiles/<%= mobiles._id %>/feedback">
 
-             <br><textarea name="content" style="width: 50%; height: 100px" ></textarea></br> 
+              <br><textarea name="content" style="width: 50%; height: 100px"></textarea></br>
 
               <input type="submit" value="Add Review"></input>
 
             </form>
             <% } %>
-  
+
         </center>
 
-           <% if (mobiles.feedback.length) { %>
-              <br>
-             
-                <% mobiles.feedback.forEach(function(m) { %>
+        <% if (mobiles.feedback.length) { %>
+          <br>
 
-                  <div style="padding: 1%;">
-                  
-                  
-                      
-                    <div class="feedbackCard"  >
+          <% mobiles.feedback.forEach(function(m) { %>
 
-                      <table style="width:25%; margin: auto;  border: 0px; align-content: left;">
-  
-                        <td style="border: 0px;""> <img src='<%= m.userAvatar%>'
-                          style="border:4px  #1b6b6f; width: 60px; height: 60px; border-radius: 30px;"></td>
-                    
-                        <td style="font-size: 12px; border: 0px; ">
-                          <%= m.userName %>
-                        </td>
-                        
-                      </table>
-                    <center><td style="text-align:left; font-size: 12px; border: 0px;">
-                      <%= m.content %>
-                    </td>
-  
-                        <% if (user?._id.equals(m.user)) { %>
-                          <form action="/feedback/<%= m._id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
-                          </form>
-                          <% } %>
-                      </td></center>  
-                      </table>
-                     
-                    </div>
-                  
-                  </div>
+            <div style="padding: 1%;">
 
-              
-                  <% }); %>
+
+
+              <div class="feedbackCard">
+
+                <table style="width:25%; margin: auto;  border: 0px; align-content: left;">
+
+                  <td style="border: 0px;""> <img src='<%= m.userAvatar%>'
+                          style=" border:4px #1b6b6f; width: 60px; height: 60px; border-radius: 30px;"></td>
+
+                  <td style="font-size: 12px; border: 0px; ">
+                    <%= m.userName %>
+                  </td>
+
+                </table>
+                <center>
+                  <td style="text-align:left; font-size: 12px; border: 0px;">
+                    <%= m.content %>
+                  </td>
+
+                  <% if (user?._id.equals(m.user)) { %>
+                    <form action="/feedback/<%= m._id %>?_method=DELETE" method="POST">
+                      <button type="submit">Delete</button>
+                    </form>
+                    <% } %>
+                      </td>
+                </center>
+                </table>
+
+              </div>
+
+            </div>
+
+
+            <% }); %>
               </br>
 
               <% } else { %>
-                <h5>No Review</h5>
+               <center><h3>There is no review in this post</h3></center> 
                 <% } %>
 
 
 
 
+                <br></br>
+                  <% if (user?._id.equals(mobiles.userId)) { %>
+                    <div style="margin-top: 30%;" class="row">
+                      <div class="col-md-12">
+                        <form  action="/mobiles/<%= mobiles._id %>?_method=PUT" method="POST">
+                          <h1> Add Mobile Info </h1>
+            
+                          <fieldset>
+            
+                            <label for="name">Device Name:</label>
+                            <input type="text" value="<%= mobiles.deviceName %>" id="name" name="deviceName">
+            
+                            <label for="email">Price:</label>
+                            <input type="text" id="name" value="<%= mobiles.devicePrice%>" name="devicePrice">
+                     
+            
+                            <label for="deviceImage">Ram:</label>
+                            <input type="text" value="<%= mobiles.deviceRam %>" id="name" name="deviceRam">
+            
+            
+                            <label for="deviceImage">Rom:</label>
+                            <input type="text" value="<%= mobiles.deviceRom %>" id="name" name="deviceRom">
+            
+                          </fieldset>
+            
+                          <button type="submit">Update</button>
+
+            
+            
+                        </form>
+                      </div>
+                    </div>
+
+                    <% } %>
 
 
-         
 
-
+                  
 
 
 

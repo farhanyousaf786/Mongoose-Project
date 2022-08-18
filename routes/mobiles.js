@@ -17,4 +17,7 @@ router.get('/:id', mobileController.mobileDetials);
 
 router.delete('/:id', isLoggedIn, mobileController.deleteDevice);
 
+router.put('/:id', isLoggedIn, mobileController.edit);
+
+
 module.exports = router;

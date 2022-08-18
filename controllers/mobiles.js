@@ -7,7 +7,28 @@ module.exports = {
   create,
   mobileDetials,
   deleteDevice,
+  edit,
 };
+
+
+
+
+function edit(req, res) {
+  console.log(req.body, " <<<<< ==== body");
+
+  Mobile.findByIdAndUpdate(req.params.id, req.body, function (err, mobDoc) {
+
+    mobDoc.save(function (err) {
+      
+      res.render("mobiles/deviceDetails", {
+        title: "Mobile Detail",
+        mobiles: mobDoc,
+      });
+    })
+  })
+}
+
+
 
 
 
