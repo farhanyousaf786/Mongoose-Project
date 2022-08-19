@@ -32,7 +32,10 @@
           <br></br>
           <br>
           <div class="grid">
-            <% mobiles.forEach(function(m) { %>
+            <% 
+              var a = mobiles;
+              
+              a.slice().reverse().forEach(function(m) { %>
               <div class="card">
                 <img src='<%= m.deviceImage%>.jpg'
                   style="border:4px  #1b6b6f; width: 200px; height: 200px; border-radius: 10px;">
