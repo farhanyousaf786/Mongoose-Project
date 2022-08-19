@@ -5,28 +5,12 @@ module.exports = {
   addDevice,
   create,
   mobileDetials,
-  deleteDevice,
   edit,
+  deleteDevice,
 };
 
 
-function edit(req, res) {
-  Mobile.findByIdAndUpdate(req.params.id, req.body, function (err, mobDoc) {
-    mobDoc.save(function (err) {
-      res.render("mobiles/deviceDetails", {
-        title: "Mobile Detail",
-        mobiles: mobDoc,
-      });
-    })
-  })
-}
-
-
-function addDevice(req, res) {
-  res.render("mobiles/addDevice.ejs");
-}
-
-
+// function to grabe all post from database and show it after login
 function index(req, res) {
   Mobile.find({}, function (err, mobileDataBase) {
     console.log(mobileDataBase, " <- all the mobiles");
@@ -41,7 +25,7 @@ function index(req, res) {
   });
 }
 
-
+// function to go to deviceDetails page
 async function mobileDetials(req, res) {
   try {
     const mobileDoc = await Mobile.findById(req.params.id)
@@ -49,13 +33,17 @@ async function mobileDetials(req, res) {
       title: "Mobile Detail",
       mobiles: mobileDoc,
     });
-
   } catch (err) {
     res.send(err);
   }
 }
 
+// function to move to addDevice page
+function addDevice(req, res) {
+  res.render("mobiles/addDevice.ejs");
+}
 
+// function to add post in databse
 function create(req, res) {
   req.body.deviceOwner = req.user.name;
   // this is is userId, which will help us to find if current post is posted by that
@@ -70,6 +58,19 @@ function create(req, res) {
   });
 }
 
+// function to update values in database
+function edit(req, res) {
+  // find value by using its id and update it
+  Mobile.findByIdAndUpdate(req.params.id, req.body, function (err, mobDoc) {
+    mobDoc.save(function (err) {
+      // keep on same page
+      res.render("mobiles/deviceDetails", {
+        title: "Mobile Detail",
+        mobiles: mobDoc,
+      });
+    })
+  })
+}
 
 async function deleteDevice(req, res) {
   try {

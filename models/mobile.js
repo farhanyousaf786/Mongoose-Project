@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-
+// feedback schema
 const feedbackSchema = new mongoose.Schema(
   {
     content: String,
@@ -13,7 +13,7 @@ const feedbackSchema = new mongoose.Schema(
   }
 );
 
-
+// mobile schema
 const mobileSchema = new mongoose.Schema({
   deviceOwner: String,
   deviceOwnerAvatar: String,
