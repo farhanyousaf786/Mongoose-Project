@@ -147,7 +147,7 @@
                     <div style="margin-top: 30%;" class="row">
                       <div class="col-md-12">
                         <form method="POST" action="/mobiles/<%= mobiles._id %>?_method=PUT">
-                          <h1> Edit Mobile Info </h1>
+                          <h1 style="color: white;"> Edit Mobile Info </h1>
                           <fieldset>
                             <label style="color: white;">Device Name:</label>
                             <input type="text" value="<%= mobiles.deviceName %>" id="name" name="deviceName">
@@ -158,7 +158,7 @@
                             <label for="deviceImage" style="color: white;">Rom:</label>
                             <input type="text" value="<%= mobiles.deviceRom %>" id="name" name="deviceRom">
                           </fieldset>
-                          <button type="submit">Update</button>
+                          <button style="color: white;" type="submit">Update</button>
                         </form>
                       </div>
                     </div>
