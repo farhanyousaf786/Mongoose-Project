@@ -44,7 +44,7 @@ function index(req, res) {
     console.log(mobileDataBase, " <- all the mobiles");
     if (err) {
       res.send(
-        "You have an error trying to find the movies, check the terminal"
+        "You have an error trying to find the mobiles, check the terminal"
       );
     }
     res.render("mobiles/index.ejs", {
@@ -89,10 +89,8 @@ function create(req, res) {
   console.log("Body >>>>>>>", req.body);
   Mobile.create(req.body, function (err, mobileDoc) {
     if (err) {
-      console.log(err, " <- err in the movies create controller");
       return res.render("mobiles/addDevice.ejs");
     }
-    console.log(mobileDoc, " <- movie created in db");
     res.redirect(`/mobiles/${mobileDoc._id}`);
   });
 }
