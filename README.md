@@ -6,11 +6,21 @@ mobile devices and give them feedback.
 
 ## Screen Shoots will be here!
 
-### Login Screen
+### Login Page
 ![1st Screen](https://imgur.com/oMqmZQm.png)
 
-## Launch Here
-[Launch Mobile Gallery](https://mobile-gallery-786.herokuapp.com/)
+### Landing Page
+![1st Screen](https://imgur.com/0sInITp.png)
+
+### Details Page
+![1st Screen](https://imgur.com/fz9GhZf.png)
+
+### Add Device Page
+![1st Screen](https://imgur.com/PBxOPE7.png)
+
+### Launch Here
+[Mobile Gallery](https://mobile-gallery-786.herokuapp.com/)
+
 
 ## Technologies Used
 * HTML
@@ -25,12 +35,11 @@ mobile devices and give them feedback.
 * https://imgur.com/ to save my images
 
 
-
 ## Icebox - Future plan
 
 * Add editing function to comments
 * add favourites Functions (So, user can save their fav. devices)
-* Wants to add smooth sounds
+* Wants to add smooth BG sounds
 * More than 3 themes.
 
 
