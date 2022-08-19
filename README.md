@@ -9,7 +9,7 @@ mobile devices and give them feedback.
 
 
 ## Launch Here
-[Launch Mobile Gallery](https://mobile-gallery-786.herokuapp.com/mobiles)
+[Launch Mobile Gallery](https://mobile-gallery-786.herokuapp.com/)
 
 ## Technologies Used
 * HTML
