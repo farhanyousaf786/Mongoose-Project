@@ -11,21 +11,21 @@ th,
 td {
   border: 1px solid black;
   color: rgb(253, 208, 179);
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 10px;
   border-width: 3px;
   border-color: #291000;
-  
+  width: 50%;
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.718);
   transition: 0.3s;
   border-radius: 20px;
   padding: 20px;
   margin: auto;
-  background-color: rgba(130, 63, 0, 0.797);
-  width: 50%;
+  background-color: rgba(96, 50, 0, 0.855);
+  width: 60%;
 }
 
 .card:hover {

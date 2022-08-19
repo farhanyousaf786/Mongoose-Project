@@ -1,6 +1,7 @@
 /*
 Styling for background animation
 */
+
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(116, 52, 0) 50%, rgb(224, 146, 50) 50%);
