@@ -14,11 +14,8 @@ function create(req, res) {
         feedbackDocument.save(function (err) {
             res.redirect(`/mobiles/${req.params.id}`);
         });
-
     });
 }
-
-
 
 
 async function deleteFeedback(req, res) {

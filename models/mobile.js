@@ -7,7 +7,6 @@ const feedbackSchema = new mongoose.Schema(
     userName: String,
     userAvatar: String,
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-
   },
   {
     timestamps: true,
@@ -27,6 +26,5 @@ const mobileSchema = new mongoose.Schema({
   userId: String,
   feedback: [feedbackSchema],
 });
-
 
 module.exports = mongoose.model("Mobile", mobileSchema);

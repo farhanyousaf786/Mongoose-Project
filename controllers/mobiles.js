@@ -1,6 +1,5 @@
 const Mobile = require("../models/mobile");
 
-
 module.exports = {
   index,
   addDevice,
@@ -11,14 +10,9 @@ module.exports = {
 };
 
 
-
 function edit(req, res) {
-  console.log(req.body, " <<<<< ==== body");
-
   Mobile.findByIdAndUpdate(req.params.id, req.body, function (err, mobDoc) {
-
     mobDoc.save(function (err) {
-
       res.render("mobiles/deviceDetails", {
         title: "Mobile Detail",
         mobiles: mobDoc,
@@ -28,18 +22,12 @@ function edit(req, res) {
 }
 
 
-
-
-
 function addDevice(req, res) {
   res.render("mobiles/addDevice.ejs");
 }
 
 
-
-
 function index(req, res) {
-
   Mobile.find({}, function (err, mobileDataBase) {
     console.log(mobileDataBase, " <- all the mobiles");
     if (err) {
@@ -51,18 +39,12 @@ function index(req, res) {
       mobiles: mobileDataBase,
     });
   });
-
 }
-
 
 
 async function mobileDetials(req, res) {
   try {
     const mobileDoc = await Mobile.findById(req.params.id)
-
-
-    console.log(mobileDoc, " <- - -- - - -  - -  all the mobiles");
-
     res.render("mobiles/deviceDetails", {
       title: "Mobile Detail",
       mobiles: mobileDoc,
@@ -71,22 +53,15 @@ async function mobileDetials(req, res) {
   } catch (err) {
     res.send(err);
   }
-
 }
 
 
 function create(req, res) {
-  console.log("Body >>>>>>>", req.body);
-
   req.body.deviceOwner = req.user.name;
-
   // this is is userId, which will help us to find if current post is posted by that
   // user or not
   req.body.userId = req.user._id.toHexString()
-
   req.body.deviceOwnerAvatar = req.user.avatar
-
-  console.log("Body >>>>>>>", req.body);
   Mobile.create(req.body, function (err, mobileDoc) {
     if (err) {
       return res.render("mobiles/addDevice.ejs");
@@ -97,20 +72,12 @@ function create(req, res) {
 
 
 async function deleteDevice(req, res) {
-
-  console.log("deleteDevice", req.params.id);
   try {
     const mobDoc = await Mobile.findById(req.params.id);
-
-      mobDoc.remove(req.params.id);
-
-      await mobDoc.save();
-
-      res.redirect('/mobiles');
-
+    mobDoc.remove(req.params.id);
+    await mobDoc.save();
+    res.redirect('/mobiles');
   } catch (err) {
-
-      res.redirect('/mobiles');
-
+    res.redirect('/mobiles');
   }
 }

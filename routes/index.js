@@ -6,15 +6,9 @@ const { resource } = require('../server');
 
 // The root route renders our only view
 router.get('/', function (req, res) {
-  //UPDATE THIS
-  // Where do you want to go for the root route
-  // in the student demo this was res.redirect('/movies'), what do you want?
-  // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
-  // a request to `/auth/google` route below
   res.render('landingPage', { title: 'Mobile Gallery' });
 
 });
-
 
 
 // Google OAuth login route
@@ -27,14 +21,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/mobiles', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect: '/mobiles' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect: '/mobiles', 
+    failureRedirect: '/mobiles' 
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function (req, res) {
-  req.logout(function () { //< - req.logout comes from passport, and what it does is destorys the cookie keeping track of the user!
+  req.logout(function () { 
     res.redirect('/')
   })
 })
