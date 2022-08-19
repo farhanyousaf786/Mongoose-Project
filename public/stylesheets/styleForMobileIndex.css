@@ -69,9 +69,14 @@ table td {
     padding: 1rem 2rem 1.15rem;
     text-transform: uppercase;
     cursor: pointer;
-    color: #ebebeb;
     min-width: 80px;
     margin: auto;
+    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-size: 100% 100%;
+    color: #27262c;
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 0 #a02108;
+    font-weight: bold;
   }
   
   li:hover {
@@ -79,7 +84,7 @@ table td {
     background-size: 100% 100%;
     color: #27262c;
     animation: spring 300ms ease-out;
-    text-shadow: 0 -1px 0 #ef816c;
+    text-shadow: 0 -1px 0 #521003;
     font-weight: bold;
   }
   li:active {

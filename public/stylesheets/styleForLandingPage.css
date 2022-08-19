@@ -1,3 +1,6 @@
+/*
+Styling for background animation
+*/
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(116, 52, 0) 50%, rgb(224, 146, 50) 50%);
@@ -47,32 +50,23 @@ h1 {
   }
 }
 
-
-ul {
-  display: flex;
-  width: 100%;
-  height: 10vh;
-  margin: auto;
-  max-width: 1000px;
-  justify-content: space-between;
-  text-align: center;
-}
-
+/*
+Styling for Buttons
+*/
 li {
+  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+  background-size: 100% 100%;
+  animation: spring 300ms ease-out;
+  font-weight: bold;
   padding: 1rem 2rem 1.15rem;
   text-transform: uppercase;
-  cursor: pointer;
-  color: #ebebeb;
   min-width: 80px;
   margin: auto;
 }
 
 li:hover {
-  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
-  background-size: 100% 100%;
   color: #27262c;
   animation: spring 300ms ease-out;
-  text-shadow: 0 -1px 0 #ef816c;
   font-weight: bold;
 }
 
@@ -81,6 +75,10 @@ li:active {
 }
 
 
+
+/*
+Styling for google login logo
+*/
 .login {
   display: flex;
   justify-content: center;

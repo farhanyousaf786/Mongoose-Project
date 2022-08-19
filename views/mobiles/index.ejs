@@ -9,19 +9,18 @@
   <title>Mobile Gallery</title>
 </head>
 
-<body>
 
+
+<body>
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
-
   <div class="content">
-
     <% if (user) {%>
       <ul>
+        <li><a href="/mobiles" style="text-decoration: none; color: white;">All POSTS</a></li>
         <li><a href="/mobiles/addDevice" style="text-decoration: none; color: white;">ADD DEVICE</a></li>
         <li> <a href="/logout" style="text-decoration: none; color: white;">LOG OUT</a></li>
-
       </ul>
       <% } else {%>
         <ul>
@@ -34,7 +33,6 @@
           <div class="grid">
             <% 
               var a = mobiles;
-              
               a.slice().reverse().forEach(function(m) { %>
               <div class="card">
                 <img src='<%= m.deviceImage%>.jpg'
@@ -58,19 +56,10 @@
                 <button style="border-radius: 8px;">
                   <center><a href="/mobiles/<%= m._id %>" style="text-decoration:none">See More...</a></center>
                 </button>
-
               </div>
               <% }); %>
           </div></br>
           </center>
-
-
   </div>
-
-
-
-
-
 </body>
-
 </html>

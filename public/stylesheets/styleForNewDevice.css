@@ -15,7 +15,7 @@ form {
   max-width: 300px;
   margin: 10px auto;
   padding: 10px 20px;
-  background: #f4f7f8;
+  background: #862f00b6;
   border-radius: 8px;
 }
 
@@ -25,15 +25,6 @@ h1 {
 }
 
 input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
 textarea,
 select {
   background: rgba(255, 255, 255, 0.1);
@@ -64,13 +55,13 @@ select {
 button {
   padding: 19px 39px 18px 39px;
   color: #FFF;
-  background-color: #4bc970;
+  background-color: #3b1600b9;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid #3ac162;
+  border: 1px solid #663600be;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
@@ -137,7 +128,7 @@ label.light {
 }
 
 body {
-  background: #1E1F25;
+  background: #2e1802;
 }
 
 ul {
@@ -154,9 +145,14 @@ li {
   padding: 1rem 2rem 1.15rem;
   text-transform: uppercase;
   cursor: pointer;
-  color: #ebebeb;
   min-width: 80px;
   margin: auto;
+  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #ef816c;
+  font-weight: bold;
 }
 
 li:hover {

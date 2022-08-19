@@ -8,38 +8,23 @@
   <link rel='stylesheet' href='/stylesheets/styleForLandingPage.css' />
 </head>
 
+
+
 <body>
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
   <div class="content">
     <img style="width: 200px; height: 200px;" src="/images/logo.png">
-
     <h1>Welcome To Mobile Gallery</h1>
-
-
     <% if (user) { %>
-
-    
-
-      <th> <button><a href="/mobiles" style="text-decoration:none">All Posts</a></button>
-      </th>
-      
+      <li><a href="/mobiles" style="text-decoration:none; color: black;">All Posts</a>
+      </li>
       <% } else { %>
-
-        <tr>
-          <button><a href="/auth/google" class="login" style="text-decoration:none">LOG IN WITH GOOGLE&nbsp;<img
-                src="https://i.imgur.com/FHjYyi0.png"></a></button>
-          </td>
-        </tr>
-
-        <table style="width:100%">
-          <tr>
-            <th> <button><a href="/mobiles" style="text-decoration:none">Recent Posts</a></button>
-            </th>
-          </tr>
-        </table>
-
+        <li><a href="/auth/google" class="login" style="text-decoration:none; color: black;">LOG IN WITH GOOGLE<img style="padding-left: 10px;"
+              src="https://i.imgur.com/FHjYyi0.png"></a></li>
+        <li><a href="/mobiles" style="text-decoration:none; color: black;">Recent Posts</a>
+        </li>
         <% } %>
   </div>
 </body>
