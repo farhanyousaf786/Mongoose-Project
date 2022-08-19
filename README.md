@@ -6,7 +6,8 @@ mobile devices and give them feedback.
 
 ## Screen Shoots will be here!
 
-
+### Login Screen
+![1st Screen](https://imgur.com/oMqmZQm.png)
 
 ## Launch Here
 [Launch Mobile Gallery](https://mobile-gallery-786.herokuapp.com/)
