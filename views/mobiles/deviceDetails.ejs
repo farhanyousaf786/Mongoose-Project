@@ -10,9 +10,6 @@
 </head>
 
 
-
-
-
 <body>
   <% if(user) { %>
     <ul>
@@ -31,18 +28,10 @@
           <br></br>
           <div class="card">
             <center>
-
-
               <br style="padding-bottom: 10px;">
-
               <img src='<%= mobiles.deviceImage%>.jpg'
                 style="   border: 5px solid rgb(43, 21, 0);width: 200px; height: 200px; border-radius: 10px; margin: auto; border-radius: 40px;">
               </br>
-
-
-
-
-
             </center>
             <table style="width:60%; margin: auto; padding: 20px;">
               <tr>
@@ -109,7 +98,7 @@
             </form>
             <% } %>
         </center>
-        <% if (mobiles.feedback.length) { %>
+        <% if (mobiles.feedback) { %>
           <br>
           <% mobiles.feedback.forEach(function(m) { %>
             <div style="padding: 1%;">
@@ -123,7 +112,7 @@
                 </table>
                 <center>
                   <td style="text-align:left; font-size: 12px; border: 0px;">
-                    <%= m.content %>
+                  <h2 style="color: white;"><%= m.content %></h2>  
                   </td>
                   <% if (user?._id.equals(m.user)) { %>
                     <form method="POST" action="/mobiles/feedback/<%= m._id %>?_method=DELETE">

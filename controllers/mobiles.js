@@ -13,7 +13,6 @@ module.exports = {
 // function to grabe all post from database and show it after login
 function index(req, res) {
   Mobile.find({}, function (err, mobileDataBase) {
-    console.log(mobileDataBase, " <- all the mobiles");
     if (err) {
       res.send(
         "You have an error trying to find the mobiles, check the terminal"

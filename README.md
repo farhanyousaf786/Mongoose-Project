@@ -1,7 +1,7 @@
 # Mobile Gallery
 
-A basic website to upload you mobile information and share with others. Moreover, You can look to other's
-mobile devices and give them feedback.
+A website to upload your mobile information along with image, and share with others people. Moreover, You can look other
+ devices and add feedback to thier post. In addition, website has feature to edit and delete posts.
 
 
 ## Screen Shoots will be here!
