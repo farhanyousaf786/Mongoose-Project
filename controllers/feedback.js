@@ -5,6 +5,7 @@ module.exports = {
     delete: deleteFeedback,
 };
 
+// create fub=nction to insert values in databse
 function create(req, res) {
     Mobile.findById(req.params.id, function (err, feedbackDocument) {
         req.body.user = req.user._id;
@@ -17,7 +18,7 @@ function create(req, res) {
     });
 }
 
-
+// delete function to remove data from database
 async function deleteFeedback(req, res) {
     try {
         const mobileDoc = await Mobile.findOne({
