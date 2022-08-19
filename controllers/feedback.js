@@ -2,7 +2,7 @@ const Mobile = require("../models/mobile");
 
 module.exports = {
     create,
-    deleteFeedback,
+    delete: deleteFeedback,
 };
 
 function create(req, res) {
@@ -21,26 +21,17 @@ function create(req, res) {
 
 
 
- function deleteFeedback(req, res){
+async function deleteFeedback(req, res) {
+    try {
+        const mobileDoc = await Mobile.findOne({
+            'feedback._id': req.params.id,
+            'feedback.user': req.user._id
+        });
+        mobileDoc.feedback.remove(req.params.id);
+        await mobileDoc.save();
+        res.redirect(`/mobiles/${mobileDoc._id}`)
+    } catch (err) {
+        res.send(err)
+    }
+}
 
-
-console.log('deleteFeedback>>>>', req.params.id);
-
- 
-  }
-
-//   try {
-//     const mobileDoc = await Mobile.findOne({
-//       'feedback._id': req.params.id,
-//       'feedback.user': req.user._id
-//     });
-
- 
-
-//     if(!mobileDoc) return res.redirect('/mobiles');
-//     mobileDoc.reviews.remove(req.params.id);
-//     await mobileDoc.save();
-//     res.redirect(`/mobiles/${mobileDoc._id}`)
-//   }catch(err){
-//     res.send(err)
-//   }

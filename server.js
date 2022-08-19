@@ -54,9 +54,10 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/mobiles', mobileRouter);
-app.use('/mobiles', feedbackRouter);
 
+app.use('/mobiles', mobileRouter);
+
+app.use('/mobiles', feedbackRouter);
 
 
 

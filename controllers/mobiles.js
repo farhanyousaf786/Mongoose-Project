@@ -110,8 +110,6 @@ async function deleteDevice(req, res) {
 
       res.redirect('/mobiles');
 
-     
-
   } catch (err) {
 
       res.redirect('/mobiles');

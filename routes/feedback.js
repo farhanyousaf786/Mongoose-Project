@@ -7,7 +7,7 @@ const feedbackController = require('../controllers/feedback');
 
 router.post('/:id/feedback', feedbackController.create);
 
-router.delete('/:id',isLoggedIn, feedbackController.deleteFeedback);
+router.delete('/feedback/:id', isLoggedIn, feedbackController.delete);
 
 
 module.exports = router;

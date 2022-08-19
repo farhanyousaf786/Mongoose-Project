@@ -84,6 +84,7 @@
 
             </table>
             <% if (user?._id.equals(mobiles.userId)) { %>
+              
               <form action="/mobiles/<%= mobiles._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
               </form>
@@ -161,8 +162,7 @@
 
                   <% if (user?._id.equals(m.user)) { %>
 
-                    <form action="/feedback/<%= m._id%>?_method=DELETE" method="POST">
-
+                    <form  method="POST" action="/mobiles/feedback/<%= m._id %>?_method=DELETE">
                     
                       <button type="submit">Delete</button>
                     </form>
