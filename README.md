@@ -19,30 +19,28 @@ A website to upload your mobile information along with image, and share with oth
 ![1st Screen](https://imgur.com/PBxOPE7.png)
 
 ### Launch Here
-[Mobile Gallery](https://mobile-gallery-786.herokuapp.com/)
+[Mobile Gallery](https://play.google.com/store/apps/details?id=com.switchapp.cluster)
 
 
 ## Technologies Used
-* HTML
-* CSS + CSS Table
-* MongoDB - Express
-* MongoDB atlas for live server
-* Heroku - for deploy application
-* PixelLab (To create Logos)
-* GitHub for version control
-* Google to get UI ideas
-* Stackoverflow to track bugs
-* https://imgur.com/ to save my images
-
+* Flutter
+* Dart
+* Andriod Studio
+* Firebase
+* Firebase Cloud Functions
+* Rive (Animations)
+* Lottie Files (Animations)
+* PixaLab (Logo Design)
+* Play console (App deployment)
+* Digital Ocean
+* Javascript
 
 ## Icebox - Future plan
 
-* Add editing function to comments
-* add favourites Functions (So, user can save their fav. devices)
-* Wants to add smooth BG sounds
-* More than 3 themes.
+* Enhance UI
+* Add Game feature for memers
 
 
 ## Special Thanks
 
-* G.A Mentors who help me out throughout the project.
+* To many dev on stacoverflow who help me to fix bugs.
